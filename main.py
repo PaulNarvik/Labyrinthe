@@ -7,7 +7,8 @@ pygame.init()
 
 class Game:
     def __init__(self) -> None:
-        self.screen = pygame.display.set_mode()
+        self.screen = pygame.display.set_mode(SCREEN_SIZE)
+        pygame.display.set_caption("Mon labyrinthe")
 
         self.running = True
 
