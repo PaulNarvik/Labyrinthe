@@ -1,7 +1,7 @@
 import pygame
 import sys
 
-from setttings import *
+from settings import *
 from maze import *
 
 pygame.init()
@@ -26,7 +26,7 @@ class Game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.end()
-                    
+
         def draw():
             self.screen.fill((0, 0, 0))
             self.maze.draw()
