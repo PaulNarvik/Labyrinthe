@@ -2,6 +2,7 @@ import pygame
 import sys
 
 from setttings import *
+from maze import *
 
 pygame.init()
 
