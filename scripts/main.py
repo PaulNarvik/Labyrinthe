@@ -16,11 +16,26 @@ class Game:
     def run(self):
         self.maze = Maze(game, (40, 30))
 
+        self.game() # Remplacer par menu plus tard :-)
+
     def menu(self):
         pass
 
     def game(self):
-        pass
+        def handle_events():
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.end()
+                    
+        def draw():
+            self.screen.fill((0, 0, 0))
+            self.maze.draw()
+
+        while self.running:
+            handle_events()
+            draw()
+
+            pygame.display.flip()
 
     def end(self):
         self.running = False

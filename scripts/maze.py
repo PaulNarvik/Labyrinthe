@@ -12,7 +12,7 @@ class Maze:
         maze = []
 
         # Valeurs choisis arbitrairement
-        wall = 1
+        wall = -1
         empty = 0
 
         for i in range(size[0]):
@@ -39,4 +39,8 @@ class Maze:
         return maze
     
     def draw(self):
-        pass
+        wall = -1
+        for y, line in enumerate(self.maze):
+            for x, cell in enumerate(line):
+                if cell == wall:
+                    pygame.draw.rect(self.game.screen, (255, 255, 255), (x * 20, y * 20, (x + 1) * 20, (y + 1) * 20))
