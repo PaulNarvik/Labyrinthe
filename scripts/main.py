@@ -14,7 +14,7 @@ class Game:
         self.running = True
 
     def run(self):
-        self.maze = Maze(game)
+        self.maze = Maze(game, (40, 30))
 
     def menu(self):
         pass
