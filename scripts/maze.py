@@ -38,6 +38,13 @@ class Maze:
             maze.pop(-1)
             self.offset[1] = CELL_SIZE // 2
 
+        nb = 0
+        for y in range(len(maze)):
+            for x in range(len(maze[y])):
+                if maze[y][x] == 0:
+                    nb += 1
+                    maze[y][x] = nb
+
         return maze
     
     def draw(self):
@@ -46,3 +53,5 @@ class Maze:
             for x, cell in enumerate(line):
                 if cell == wall:
                     pygame.draw.rect(self.game.screen, (255, 255, 255), (x * CELL_SIZE + self.offset[0], y * CELL_SIZE + self.offset[1], CELL_SIZE, CELL_SIZE))
+                else:
+                    pygame.draw.rect(self.game.screen, (cell % 200, cell % 200, cell % 200), (x * CELL_SIZE + self.offset[0], y * CELL_SIZE + self.offset[1], CELL_SIZE, CELL_SIZE))
