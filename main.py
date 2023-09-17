@@ -15,6 +15,12 @@ class Game:
     def run(self):
         pass
 
+    def menu(self):
+        pass
+
+    def game(self):
+        pass
+
     def end(self):
         self.running = False
         pygame.quit()
