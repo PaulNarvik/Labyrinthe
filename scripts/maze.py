@@ -1,4 +1,5 @@
 import pygame
+import random
 
 from settings import *
 
@@ -9,7 +10,14 @@ class Maze:
 
         self.offset = [0, 0]
         self.maze = self.new_maze(self.size)
-        
+
+    def is_finished(self, maze):
+        present = []
+        for line in maze:
+            for cell in line:
+                present.append(cell)
+        present = set(present)
+        return len(present) == 2
 
     def new_maze(self, size):
         maze = []
